@@ -1,0 +1,53 @@
+---
+const {
+  title = "Feedback from our users",
+  subtitle = "See what people are saying 💬",
+  testimonials = [
+    {
+      quote:
+        "This product has completely transformed the way I work. Boosted my productivity and made my life so much easier.",
+      name: "Don Joe",
+      role: "Full Stack Developer",
+    },
+    {
+      quote:
+        "WOW! this has saved me. Seamless integration with my workflow have made it an indispensable tool for my daily tasks.",
+      name: "Jane Doe",
+      role: "Frontend Engineer",
+    },
+    {
+      quote:
+        "The utility-first approach has allowed me to rapidly prototype and build beautiful. A solid foundation for my projects.",
+      name: "J.D. Swift",
+      role: "Product Designer",
+    },
+  ],
+} = Astro.props;
+---
+
+<!-- Everybody loves a good testimonial! -->
+    <div class="w-full mx-auto p-10 shadow-xl">
+    <h2 class="font-heading  mb-6 text-4xl md:text-5xl tracking-tight font-bold text-[var(--color-primary)]">
+      {title}
+    </h2>
+
+    <!-- A little subtitle to give more context. -->
+
+    <h3 class="font-heading mx-auto mb-16 leading-relaxed font-sans text-2xl font-semibold italic text-[var(--color-primary)]">
+      {subtitle}
+    </h3>
+
+      <!-- The testimonials themselves, laid out in a nice grid. -->
+
+      <div class="w-10/12 mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+      {testimonials.map((t) => (
+        <div class="p-4 rounded-2xl shadow-sm bg-[var(--color-fg)] hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+          <p class="font-sans font-medium text-lg italic text-[var(--color-secondary)]">“{t.quote}”</p>
+          <div>
+            <hr class="my-4 border-t border-[var(--color-secondary)]" />
+            <p class="font-sans text-lg font-semibold text-[var(--color-secondary)]">{t.name}</p>
+            <p class="font-sans text-lg text-[var(--color-secondary)]">{t.role}</p>
+          </div>
+        </div>
+      ))}
+      </div>

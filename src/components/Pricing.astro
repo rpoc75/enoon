@@ -1,0 +1,117 @@
+---
+import BillingToggle from "../components/BillingToggle.astro";
+/**
+ * PRODUCTION‑READY PRICING COMPONENT
+ * ---------------------------------
+ * This pricing section is DEMO‑ONLY.
+ * No payment processing, billing logic, or checkout is included.
+ * Buyers can replace prices, features, and button links as needed.
+ */
+const plans = [
+  {
+    name: "Starter",
+    priceMonthly: "$19/mo",
+    priceYearly: "$190/yr",
+    description: "Perfect for small projects and personal use.",
+    features: [
+      "Basic analytics",
+      "Email support",
+      "Up to 3 projects",
+      "Community access"
+    ],
+    href: "#", // demo link
+    highlight: false
+  },
+  {
+    name: "Pro",
+    priceMonthly: "$49/mo",
+    priceYearly: "$490/yr",
+    description: "Ideal for growing teams and serious projects.",
+    features: [
+      "Advanced analytics",
+      "Priority support",
+      "Unlimited projects",
+      "Team collaboration tools",
+      "API access"
+    ],
+    href: "#",
+    highlight: true
+  },
+  {
+    name: "Enterprise",
+    priceMonthly: "Custom",
+    priceYearly: "Custom",
+    description: "For large teams with custom requirements.",
+    features: [
+      "Dedicated account manager",
+      "Custom integrations",
+      "Security reviews",
+      "SLA & uptime guarantees"
+    ],
+    href: "/contact",
+    highlight: false
+  }
+];
+---
+    <div class="w-11/12 mx-auto mb-20 p-10 shadow-xl">
+    <h2 class="font-heading mb-8 tracking-tight text-4xl font-bold text-[var(--color-primary)]">
+      Simple, Transparent Pricing
+    </h2>
+
+    <BillingToggle />
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {plans.map((plan) => (
+        <div
+          class={`p-8 border-2 rounded-2xl border-[var(--color-accent)] shadow-sm transition ${
+            plan.highlight
+              ?"text-[var(--color-primary)] bg-[var(--color-bg)] border-[var(--color-accent)] shadow-xl hover:shadow-2xl"
+              :"border-[var(--color-accent)] bg-[var(--color-btn-bg-alt)] shadow-xl text-[var(--color-primary)] hover:shadow-md"
+          }`}
+        >
+          <h3 class="mb-2 text-2xl font-semibold">{plan.name}</h3>
+          <p class="mb-4 text-4xl font-bold"
+          data-monthly={plan.priceMonthly}
+          data-yearly={plan.priceYearly}>{plan.priceMonthly}</p>
+          <p class="mb-6 text-lg text-[var(--color-primary)]">
+            {plan.description}
+          </p>
+
+          <ul class="space-y-3 mb-8 text-left">
+            {plan.features.map((feature) => (
+              <li class="flex items-center gap-2">
+                <span class="text-lg italic font-bold text-[var(--color-accent)]">✓</span>
+                <span class="text-[var(--color-primary)]">{feature}</span>
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href={plan.href}
+            class={`block w-full text-center py-3 border-2 rounded-lg font-semibold transition ${
+              plan.highlight
+                ?"bg-[var(--color-btn-bg)] text-[var(--color-secondary)] hover:text-[var(--color-primary-hover)] hover:bg-[var(--color-btn-bg-alt)]"
+                :"bg-[var(--color-btn-bg)] text-[var(--color-secondary)] hover:text-[var(--color-primary-hover)] hover:bg-[var(--color-btn-bg-alt)]"
+            }`}
+          >
+            {plan.name === "Enterprise" ? "Contact Us" : "Buy Now"}
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <!-- Demo disclaimer -->
+    <p class=" mt-8 text-lg text-[var(--color-primary)]">
+      *** This pricing is for demonstration purposes only. No real payment processing is included in this theme. ***
+    </p>
+  </div>
+<script>
+  window.addEventListener("billingchange", (e) => {
+    const mode = (e as CustomEvent).detail; // "monthly" or "yearly"
+
+    document.querySelectorAll<HTMLElement>("[data-monthly]").forEach((el) => {
+      el.textContent =
+        mode === "yearly" ? el.dataset.yearly! : el.dataset.monthly!;
+    });
+  });
+</script>

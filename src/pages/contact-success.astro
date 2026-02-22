@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<!-- This page is optional and not included by default. Update your contact form to redirect here after a successful submission. This page is displayed after a successful contact form submission. It provides feedback to the user that their message has been sent and offers a link to return to the homepage. -->
+
+<BaseLayout title="Message Sent" description="Your message has been delivered.">
+  <section class="py-32 bg-[var(--color-bg)]">
+    <div class="max-w-xl mx-auto px-6 text-center">
+      <h1 class="mb-6 text-5xl font-semibold tracking-tight text-[var(--color-fg)]">
+        Thank You
+      </h1>
+
+      <p class="mb-8 text-lg leading-relaxed text-[var(--color-fg)]">
+        Your message has been successfully sent.
+      </p>
+
+      <a
+        href="/"
+        class="inline-block px-8 py-4 rounded-full text-[var(--color-fg)] bg-[var(--color-accent)] hover:bg-[var(--color-accent)]"
+      >
+        Return Home
+      </a>
+    </div>
+  </section>
+</BaseLayout>

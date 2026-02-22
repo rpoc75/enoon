@@ -1,0 +1,26 @@
+---
+const { title="SWIFT",
+        subtitle="A clean, modern theme designed for speed, clarity, and zero friction.",
+        ctaText="Get SWIFT",
+        ctaLink="#features"
+         } = Astro.props;
+---
+
+<!-- Hero section to introduce the main value proposition and call to action. -->
+         <div class="w-10/12 mx-auto mb-20 p-10 border-2 rounded-2xl shadow-xl bg-[var(--color-fg)] border-[var(--color-accent)]">
+    <h1 class="font-heading mb-6 text-5xl md:text-6xl tracking-tight font-semibold text-[var(--color-accent)]">
+      {title}
+    </h1>
+
+    <p class="mb-10 leading-relaxed font-semibold italic text-2xl text-[var(--color-secondary)]">
+      {subtitle}
+    </p>
+
+    <a
+      href={ctaLink}
+      class="inline-flex px-8 py-4 items-center justify-center border-dashed border-2 rounded-full border-[var(--color-accent)] text-base font-medium bg-[var(--color-btn-bg)] text-[var(--color-secondary)] hover:text-[var(--color-primary-hover)] hover:bg-[var(--color-btn-bg-alt)] shadow-lg hover:shadow-xl transition"
+    >
+      {ctaText}
+    </a>
+</div>
+

@@ -1,0 +1,43 @@
+---
+interface Props {
+  title: string;
+  img?: string;
+  desc?: string;
+  url: string;
+  badge?: string;
+  target?: '_self' | '_blank';
+}
+
+const { title, img, desc, url, badge, target = '_self' } = Astro.props;
+---
+
+<a
+  href={url}
+  target={target}
+  rel={target === '_blank' ? 'noopener noreferrer' : undefined}
+  class="group flex flex-col sm:flex-row gap-12 items-start py-8 transition-opacity hover:opacity-90"
+>
+  {img && (
+    <div class="w-full p-1 text-lg text-center sm:w-48 shrink-0 overflow-hidden rounded-xl border bg-[var(--color-btn-bg)] text-[var(--color-secondary)] border-[var(--color-accent)]">
+      <img
+        src={img}
+        alt={title}
+        class="w-full h-40 sm:h-full object-cover transition duration-300 group-hover:scale-105"
+        loading="lazy"
+      />
+    </div>
+  )}
+
+  <div class="flex flex-col justify-center gap-2">
+    {badge && (
+      <span class="inline-block w-fit text-md font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-[var(--color-btn-bg)] text-[var(--color-accent)]">
+        {badge}
+      </span>
+    )}
+    {desc && (
+      <p class="leading-relaxed text-lg text-[var(--color-primary)]">
+        {desc}
+      </p>
+    )}
+  </div>
+</a>

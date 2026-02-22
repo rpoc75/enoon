@@ -1,0 +1,56 @@
+---
+interface FeatureItem {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+const {
+  title = "Everything you need to build fast",
+  subtitle = "Focus on your content — SWIFT handles the design, structure, and performance.",
+  items = [
+    {
+      title: "Zero bloat",
+      description: "Astro ships zero JavaScript by default, giving you instant performance wins.",
+      icon: "⚡",
+    },
+    {
+      title: "Fully modular",
+      description: "Use React islands for interactive components without shipping a full SPA.",
+      icon: "🧩",
+    },
+    {
+      title: "Developer‑friendly, Beautiful defaults",
+      description: "Clean foundation, beautiful components, and the speed to ship today.",
+      icon: "🎨",
+    },
+  ],
+} = Astro.props as {
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  items?: FeatureItem[];
+};
+---
+
+<!-- This component is designed to be a reusable "Features" section for a landing page or product page. It accepts props for the eyebrow, title, subtitle, and an array of feature items, each with its own title, description, and icon. The layout is responsive and styled with Tailwind CSS for a modern look and feel. -->
+
+  <div class="w-10/12  mx-auto mb-20 p-10 shadow-xl">
+    <h2 class="font-heading mb-6 text-4xl font-semibold tracking-tight text-[var(--color-primary)]">
+      {title}
+    </h2>
+
+    <p class="mx-auto mb-12 font-sans leading-relaxed text-lg text-[var(--color-primary)]">
+      {subtitle}
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      {items.map((item) => (
+        <div class="rounded-xl border-2 shadow-sm p-6 hover:shadow-md hover:border-[var(--color-accent)] hover:-translate-y-1 transition-all duration-200  bg-[var(--color-bg)] border-[var(--color-bg)]">
+          <div class="text-4xl mb-4">{item.icon}</div>
+          <h3 class="font-heading  mb-2 text-xl font-semibold text-[var(--color-primary)]">{item.title}</h3>
+          <p class="font-sans leading-relaxed text-[var(--color-primary)]">{item.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>

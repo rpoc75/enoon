@@ -1,0 +1,80 @@
+/* Global styles for the application. Add custom styles here or import other CSS files as needed. This file is imported in the main entry point of the application (e.g., index.js or App.js) to ensure that these styles are applied globally across all components. */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Default (no JS / SSR fallback) — matches light mode */
+:root {
+  --color-bg-body: #FFF;
+  --color-primary: #e0ddef;
+  --color-secondary: #1a1a1d;
+  --color-primary-hover: #1a1a1d;
+  --color-accent: #9f94ca;
+  --color-bg: #000;
+  --color-fg: #aea3d8;
+  --color-btn-bg: #9f94ca;
+  --color-btn-bg-alt: #22202c;
+  --color-btn-hover-bg: #22202c;
+  --color-brand: #FFF;
+}
+
+/* Light mode defaults */
+:root[data-mode='light'] {
+  --color-bg-body: #FFF;
+  --color-primary: #e0ddef;
+  --color-secondary: #1a1a1d;
+  --color-primary-hover: #1a1a1d;
+  --color-accent: #9f94ca;
+  --color-bg: #33343a;
+  --color-fg: #aea3d8;     
+  --color-btn-bg: #9f94ca;
+  --color-btn-bg-alt: #22202c;
+  --color-btn-hover-bg: #22202c;
+  --color-brand: #FFF;
+}
+
+/* Dark mode */
+:root[data-mode='dark'] {
+  --color-bg-body: #000;
+  --color-primary: #bebdc3;
+  --color-secondary: #1a1a1d;
+  --color-primary-hover: #6b6b86;
+  --color-accent: #6e639a;
+  --color-bg: #1a1a1d;
+  --color-fg: #bebdc3;     
+  --color-btn-bg: #bebdc3;
+  --color-btn-bg-alt: #22202c;
+  --color-btn-hover-bg: #22202c;
+  --color-brand: #bebdc3;
+};
+
+body {
+  background-color: var(--color-bg-body);
+}
+
+  @keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@layer utilities { .fade-in { animation: fadeIn 1.3s ease-out both; } @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } } }

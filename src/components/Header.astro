@@ -1,0 +1,27 @@
+---
+import ThemeManager from "../components/ThemeManager.astro";
+import Nav from "../components/Nav.astro";
+import MobileNav from "./MobileNav.astro";
+---
+
+<!-- Header section with brand and navigation links. -->
+
+<header class="w-9/12 mx-auto py-6 top-0 z-50 border-2 rounded-2xl shadow-2xl bg-[var(--color-bg)] sticky">
+  <div class="mx-auto flex items-center justify-between py-4 px-6">
+    <a href="/" class="text-2xl font-semibold text-[var(--color-brand)]">SWIFT V1.0</a>
+
+  <Nav items={[
+  { title: "About", href: "/about" }, 
+  { title: "Blog", href: "/blog" },
+  { title: "Contact", href: "/contact" }
+]} />
+    
+    <ThemeManager />
+
+    <MobileNav items={[
+  { title: "About", href: "/about" },
+  { title: "Blog", href: "/blog" },
+  { title: "Contact", href: "/contact" }
+]} />
+</div>
+</header>

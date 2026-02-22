@@ -1,0 +1,55 @@
+---
+/**
+ * Reusable Billing Toggle Component
+ * Emits a "billingchange" event with value: "monthly" or "yearly"
+ */
+---
+
+<div class="flex items-center justify-center mb-10">
+  <div class="flex items-center gap-4 px-4 py-2 rounded-full shadow-inner bg-[var(--color-bg)]">
+    <span class="text-sm font-medium text-[var(--color-primary)]">Monthly</span>
+
+    <button
+      id="billing-toggle"
+      class="relative w-12 h-6 rounded-full bg-[var(--color-fg)]"
+      role="switch"
+      aria-checked="false"
+      aria-label="Toggle yearly billing"
+    >
+      <span
+        id="billing-knob"
+        class="absolute top-1 left-1 w-4 h-4 rounded-full shadow transform transition bg-[var(--color-bg)]"
+      ></span>
+    </button>
+
+    <span class="text-sm font-medium text-[var(--color-primary)]">Yearly</span>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("billing-toggle");
+    const knob = document.getElementById("billing-knob");
+
+    if (!toggle || !knob) return;
+
+    let yearly = false;
+
+    toggle.addEventListener("click", () => {
+      yearly = !yearly;
+
+      knob.style.transform = yearly
+        ? "translateX(24px)"
+        : "translateX(0px)";
+
+      toggle.setAttribute("aria-checked", String(yearly));
+
+      // Emit a custom event so parent components can react
+      window.dispatchEvent(
+        new CustomEvent("billingchange", {
+          detail: yearly ? "yearly" : "monthly"
+        })
+      );
+    });
+  });
+</script>

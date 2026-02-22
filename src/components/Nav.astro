@@ -1,0 +1,29 @@
+---
+interface Props {
+  items?: NavItem[];
+}
+
+interface NavItem {
+  title: string;
+  href: string;
+}
+
+const { items = [
+  { title: "About", href: "/about" }, 
+  { title: "Blog", href: "/blog" }, 
+  { title: "Contact", href: "/contact" }
+] } = Astro.props;
+---
+
+<nav class="relative">
+  {/* Desktop Navigation */}
+  <div class="hidden md:flex gap-8 text-2xl font-semibold tracking-wide text-[var(--color-accent)]">
+    {items.map(item => (
+      <a 
+        href={item.href} 
+        class="hover:text-[var(--color-accent)] transition duration-200"
+      >
+        {item.title}
+      </a>
+    ))}
+  </div>

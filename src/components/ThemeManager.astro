@@ -1,0 +1,49 @@
+---
+/**
+ * Reusable Light/Dark Toggle Component
+ * Emits a "Theme-Mode" event with value: "Light" or "Dark"
+ */
+---
+<button
+  onclick="toggleTheme()"
+  class="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--color-fg)] hover:bg-[var(--color-accent)] text-[var(--color-primary)] transition"
+  aria-label="Toggle theme"
+>
+  <span id="theme-icon" class="text-xl">☀️</span>
+</button>
+<script is:inline>
+const storageKey = 'themePreference';
+
+const getTheme = () => {
+  const storedTheme = localStorage.getItem(storageKey);
+  if (storedTheme) return storedTheme;
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+};
+
+const applyTheme = (theme) => {
+  document.documentElement.dataset.mode = theme;
+};
+
+const setTheme = (theme) => {
+  localStorage.setItem(storageKey, theme);
+  applyTheme(theme);
+};
+
+const updateThemeIcon = () => {
+  const icon = document.getElementById('theme-icon');
+  if (!icon) return;
+  const theme = getTheme();
+  icon.textContent = theme === 'dark' ? '🌙' : '☀️';
+};
+
+const toggleTheme = () => {
+  const current = getTheme();
+  const next = current === 'dark' ? 'light' : 'dark';
+  setTheme(next);
+  updateThemeIcon();
+};
+
+const initialTheme = getTheme();
+applyTheme(initialTheme);
+window.addEventListener('DOMContentLoaded', updateThemeIcon);
+</script>

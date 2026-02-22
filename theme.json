@@ -1,0 +1,52 @@
+{
+  "version": 2,
+  "settings": {
+    "color": {
+      "palette": [
+        { "slug": "bg-body", "name": "Background Body", "color": "var(--color-bg-body)" },
+        { "slug": "primary", "name": "Primary", "color": "var(--color-primary)" },
+        { "slug": "secondary", "name": "Secondary", "color": "var(--color-secondary)" },
+        { "slug": "primary-hover", "name": "Primary Hover", "color": "var(--color-primary-hover)" },
+        { "slug": "accent", "name": "Accent", "color": "var(--color-accent)" },
+        { "slug": "background", "name": "Background", "color": "var(--color-bg)" },
+        { "slug": "foreground", "name": "Foreground", "color": "var(--color-fg)" },
+        { "slug": "button-bg", "name": "Button Background", "color": "var(--color-btn-bg)" },
+        { "slug": "button-bg-alt", "name": "Button Background Alt", "color": "var(--color-btn-bg-alt)" },
+        { "slug": "button-hover-bg", "name": "Button Hover Background", "color": "var(--color-btn-hover-bg)" },
+        { "slug": "brand", "name": "Brand", "color": "var(--color-brand)" }
+      ],
+      "schemes": {
+        "colors": {
+          "--color-bg-body": "#FFF",
+          "--color-primary": "#e0ddef",
+          "--color-secondary": "#1a1a1d",
+          "--color-primary-hover": "#1a1a1d",
+          "--color-accent": "#9f94ca",
+          "--color-bg": "#000",
+          "--color-fg": "#aea3d8",
+          "--color-btn-bg": "#9f94ca",
+          "--color-btn-bg-alt": "#22202c",
+          "--color-btn-hover-bg": "#22202c",
+          "--color-brand": "#FFF"
+        }
+      }
+    }
+  },
+  "variations": {
+    "dark": {
+      "colors": {
+        "--color-bg-body": "#000",
+        "--color-primary": "#1a1a1d",
+        "--color-secondary": "#e0ddef",
+        "--color-primary-hover": "#e0ddef",
+        "--color-accent": "#7f75a5",
+        "--color-bg": "#e0ddef",
+        "--color-fg": "#000",     
+        "--color-btn-bg": "#22202c",
+        "--color-btn-bg-alt": "#7f75a5",
+        "--color-btn-hover-bg": "#7f75a5",
+        "--color-brand": "#000"
+      }
+    }
+  }
+}

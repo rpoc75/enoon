@@ -1,0 +1,15 @@
+---
+
+---
+<!-- SkillsCard.astro -->
+
+        <div class="w-7/12 mx-auto px-12 text-center">
+            <h2 class="mb-12 pb-2 text-2xl font-bold border-b text-[var(--color-primary)] border-[var(--color-accent)]">Skills</h2>
+            </div>
+            <div class="w-7/12 mx-auto mb-24  px-12 grid grid-cols-2 md:grid-cols-2 gap-4">
+                {['Astro', 'TypeScript', 'React', 'Node.js', 'Tailwind CSS', 'PostgreSQL'].map((skill) => (
+                    <div class="p-2 text-lg text-center font-bold rounded-2xl text-[var(--color-secondary)] bg-[var(--color-btn-bg)] border-2 border-[var(--color-accent)]">
+                        {skill}
+                    </div>
+                ))}
+            </div>
