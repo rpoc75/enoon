@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Set the default file to serve in a directory
+  DirectoryIndex index.html
+
+  # Serve existing files and directories directly
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # For everything else, fall back to the root index.html.
+  # This handles client-side routing if your app uses it.
+  RewriteRule ^ index.html [L]
+</IfModule>
