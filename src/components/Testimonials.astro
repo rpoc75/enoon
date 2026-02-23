@@ -11,13 +11,13 @@ const {
     },
     {
       quote:
-        "WOW! this has saved me. Seamless integration with my workflow have made it an indispensable tool for my daily tasks.",
+        "WOW! this has saved me. Seamless integration with my workflow has made it an indispensable tool for my daily tasks.",
       name: "Jane Doe",
       role: "Frontend Engineer",
     },
     {
       quote:
-        "The utility-first approach has allowed me to rapidly prototype and build beautiful. A solid foundation for my projects.",
+        "The utility-first approach has allowed me to rapidly prototype and build beautiful interfaces. A solid foundation for my projects.",
       name: "J.D. Swift",
       role: "Product Designer",
     },
@@ -26,8 +26,8 @@ const {
 ---
 
 <!-- Everybody loves a good testimonial! -->
-    <div class="w-full mx-auto p-10 shadow-xl">
-    <h2 class="font-heading  mb-6 text-4xl md:text-5xl tracking-tight font-bold text-[var(--color-primary)]">
+    <div class="w-full mx-auto rounded-2xl p-10 shadow-xl">
+    <h2 class="font-heading mb-6 text-4xl md:text-5xl tracking-tight font-bold text-[var(--color-primary)]">
       {title}
     </h2>
 
@@ -41,10 +41,10 @@ const {
 
       <div class="w-10/12 mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
       {testimonials.map((t) => (
-        <div class="p-4 rounded-2xl shadow-sm bg-[var(--color-fg)] hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-          <p class="font-sans font-medium text-lg italic text-[var(--color-secondary)]">“{t.quote}”</p>
+        <div class="p-8 rounded-2xl shadow-md bg-[var(--color-bg)] border-2 border-[var(--color-accent)] hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+          <p class="font-sans font-semibold text-lg italic text-[var(--color-accent)]">“{t.quote}”</p>
           <div>
-            <hr class="my-4 border-t border-[var(--color-secondary)]" />
+            <hr class="my-4 border-t border-[var(--color-bg-body)]" />
             <p class="font-sans text-lg font-semibold text-[var(--color-secondary)]">{t.name}</p>
             <p class="font-sans text-lg text-[var(--color-secondary)]">{t.role}</p>
           </div>

@@ -6,28 +6,34 @@
         { "slug": "bg-body", "name": "Background Body", "color": "var(--color-bg-body)" },
         { "slug": "primary", "name": "Primary", "color": "var(--color-primary)" },
         { "slug": "secondary", "name": "Secondary", "color": "var(--color-secondary)" },
-        { "slug": "primary-hover", "name": "Primary Hover", "color": "var(--color-primary-hover)" },
+        { "slug": "link", "name": "Link", "color": "var(--color-link)" },
+        { "slug": "link-hover", "name": "Link Hover", "color": "var(--color-link-hover)" },
+        { "slug": "title", "name": "Title", "color": "var(--color-title)" },
+        { "slug": "heading", "name": "Heading", "color": "var(--color-heading)" },
         { "slug": "accent", "name": "Accent", "color": "var(--color-accent)" },
         { "slug": "background", "name": "Background", "color": "var(--color-bg)" },
-        { "slug": "foreground", "name": "Foreground", "color": "var(--color-fg)" },
         { "slug": "button-bg", "name": "Button Background", "color": "var(--color-btn-bg)" },
-        { "slug": "button-bg-alt", "name": "Button Background Alt", "color": "var(--color-btn-bg-alt)" },
+        { "slug": "button-text", "name": "Button Text", "color": "var(--color-btn-text)" },
         { "slug": "button-hover-bg", "name": "Button Hover Background", "color": "var(--color-btn-hover-bg)" },
+        { "slug": "button-hover-text", "name": "Button Hover Text", "color": "var(--color-btn-hover-text)" },
         { "slug": "brand", "name": "Brand", "color": "var(--color-brand)" }
       ],
       "schemes": {
         "colors": {
-          "--color-bg-body": "#FFF",
-          "--color-primary": "#e0ddef",
-          "--color-secondary": "#1a1a1d",
-          "--color-primary-hover": "#1a1a1d",
-          "--color-accent": "#9f94ca",
-          "--color-bg": "#000",
-          "--color-fg": "#aea3d8",
-          "--color-btn-bg": "#9f94ca",
-          "--color-btn-bg-alt": "#22202c",
-          "--color-btn-hover-bg": "#22202c",
-          "--color-brand": "#FFF"
+          "--color-bg-body": "#7e7e7f",
+          "--color-primary": "#1a1a1d",
+          "--color-secondary": "#bebdc3",
+          "--color-link": "#1a1a1d",
+          "--color-link-hover": "#bebdc3",
+          "--color-title": "#7e7e7f",
+          "--color-heading": "#bebdc3",
+          "--color-accent": "#beb3df",
+          "--color-bg": "#1a1a1d",
+          "--color-btn-bg": "#1a1a1d",
+          "--color-btn-text": "#7e7e7f",
+          "--color-btn-hover-bg": "#7e7e7f",
+          "--color-btn-hover-text": "#1a1a1d",
+          "--color-brand": "#c7c7d5"
         }
       }
     }
@@ -36,16 +42,19 @@
     "dark": {
       "colors": {
         "--color-bg-body": "#000",
-        "--color-primary": "#1a1a1d",
-        "--color-secondary": "#e0ddef",
-        "--color-primary-hover": "#e0ddef",
-        "--color-accent": "#7f75a5",
-        "--color-bg": "#e0ddef",
-        "--color-fg": "#000",     
-        "--color-btn-bg": "#22202c",
-        "--color-btn-bg-alt": "#7f75a5",
-        "--color-btn-hover-bg": "#7f75a5",
-        "--color-brand": "#000"
+        "--color-primary": "#bebdc3",
+        "--color-secondary": "#1a1a1d",
+        "--color-link": "#bebdc3",
+        "--color-link-hover": "#1a1a1d",
+        "--color-title": "#7e7e7f",
+        "--color-heading": "#bebdc3",
+        "--color-accent": "#beb3df",
+        "--color-bg": "#7e7e7f",     
+        "--color-btn-bg": "#7e7e7f",
+        "--color-btn-text": "#1a1a1d",
+        "--color-btn-hover-bg": "#1a1a1d",
+        "--color-btn-hover-text": "#bebdc3",
+        "--color-brand": "#7e7e7f"
       }
     }
   }

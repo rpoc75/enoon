@@ -53,8 +53,8 @@ const plans = [
   }
 ];
 ---
-    <div class="w-11/12 mx-auto mb-20 p-10 shadow-xl">
-    <h2 class="font-heading mb-8 tracking-tight text-4xl font-bold text-[var(--color-primary)]">
+    <div class="w-11/12 mx-auto mb-15 p-10 rounded-2xl shadow-xl">
+    <h2 class="font-heading mb-8 tracking-tight text-4xl font-bold text-[var(--color-heading)]">
       Simple, Transparent Pricing
     </h2>
 
@@ -65,23 +65,23 @@ const plans = [
         <div
           class={`p-8 border-2 rounded-2xl border-[var(--color-accent)] shadow-sm transition ${
             plan.highlight
-              ?"text-[var(--color-primary)] bg-[var(--color-bg)] border-[var(--color-accent)] shadow-xl hover:shadow-2xl"
-              :"border-[var(--color-accent)] bg-[var(--color-btn-bg-alt)] shadow-xl text-[var(--color-primary)] hover:shadow-md"
+              ?"text-[var(--color-secondary)] bg-[var(--color-bg)] border-[var(--color-accent)] shadow-xl hover:shadow-2xl"
+              :"border-[var(--color-accent)] bg-[var(--color-bg)] shadow-xl text-[var(--color-secondary)] hover:shadow-md"
           }`}
         >
-          <h3 class="mb-2 text-2xl font-semibold">{plan.name}</h3>
+          <h3 class="mb-2 text-2xl font-semibold text-[var(--color-heading)]">{plan.name}</h3>
           <p class="mb-4 text-4xl font-bold"
           data-monthly={plan.priceMonthly}
           data-yearly={plan.priceYearly}>{plan.priceMonthly}</p>
-          <p class="mb-6 text-lg text-[var(--color-primary)]">
+          <p class="mb-6 text-lg text-[var(--color-secondary)]">
             {plan.description}
           </p>
 
           <ul class="space-y-3 mb-8 text-left">
             {plan.features.map((feature) => (
               <li class="flex items-center gap-2">
-                <span class="text-lg italic font-bold text-[var(--color-accent)]">✓</span>
-                <span class="text-[var(--color-primary)]">{feature}</span>
+                <span class="text-xl italic font-bold text-[var(--color-accent)]">✓</span>
+                <span class="text-xl text-[var(--color-secondary)]">{feature}</span>
               </li>
             ))}
           </ul>
@@ -90,8 +90,8 @@ const plans = [
             href={plan.href}
             class={`block w-full text-center py-3 border-2 rounded-lg font-semibold transition ${
               plan.highlight
-                ?"bg-[var(--color-btn-bg)] text-[var(--color-secondary)] hover:text-[var(--color-primary-hover)] hover:bg-[var(--color-btn-bg-alt)]"
-                :"bg-[var(--color-btn-bg)] text-[var(--color-secondary)] hover:text-[var(--color-primary-hover)] hover:bg-[var(--color-btn-bg-alt)]"
+                ?"bg-[var(--color-btn-hover-bg)] text-[var(--color-accent)] hover:text-[var(--color-btn-text)] hover:bg-[var(--color-btn-bg)]"
+                :"bg-[var(--color-btn-hover-bg)] text-[var(--color-btn-hover-text)] hover:text-[var(--color-btn-text)] hover:bg-[var(--color-btn-bg)]"
             }`}
           >
             {plan.name === "Enterprise" ? "Contact Us" : "Buy Now"}
@@ -101,7 +101,7 @@ const plans = [
     </div>
 
     <!-- Demo disclaimer -->
-    <p class=" mt-8 text-lg text-[var(--color-primary)]">
+    <p class=" mt-8 text-lg text-[var(--color-accent)] italic text-center">
       *** This pricing is for demonstration purposes only. No real payment processing is included in this theme. ***
     </p>
   </div>

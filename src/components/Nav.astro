@@ -17,11 +17,11 @@ const { items = [
 
 <nav class="relative">
   {/* Desktop Navigation */}
-  <div class="hidden md:flex gap-8 text-2xl font-semibold tracking-wide text-[var(--color-accent)]">
+  <div class="hidden md:flex gap-8 text-2xl font-semibold tracking-wide text-[var(--color-link)]">
     {items.map(item => (
       <a 
         href={item.href} 
-        class="hover:text-[var(--color-accent)] transition duration-200"
+        class="hover:text-[var(--color-link-hover)] transition duration-200"
       >
         {item.title}
       </a>

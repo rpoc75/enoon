@@ -1,17 +1,17 @@
 ---
 const {
-  title = "About Me",
-  subtitle = "Passionate developer, designer, and creator. I love building beautiful and functional web experiences.",
-  description = "I enjoy turning complex problems into simple, elegant solutions, and am always open to exploring new ideas and learning something new.",
+  title = "📱Developer 🎨 Designer 🧩 Creator.",
+  subtitle = "Not used here yet, but I might add something later.",
+  description = "I love building beautiful, functional web sites that are simple and elegant. I have a Full-Stack Personality 😉",
   imageSrc = "coffee.jpg",
 } = Astro.props;
 ---
 
-  <div class="w-10/12 mx-auto mb-24 md:p-8 rounded-2xl bg-[var(--color-fg)] ">
-    <h1 class="font-heading text-5xl md:text-6xl tracking-tight font-semibold text-[var(--color-accent)] mb-6">
+  <div class="w-7/12 mx-auto my-15 p-10 border-2 rounded-4xl shadow-xl border-[var(--color-bg)]">
+    <h1 class="font-heading text-3xl md:text-4xl tracking-tight font-semibold text-[var(--color-title)] mb-6">
       {title}
     </h1>
-    <div class="w-11/12 flex flex-col md:flex-row gap-10 text-center items-center">
+    <div class="w-10/12 flex flex-col md:flex-row gap-10 text-center items-center">
                 <div class="w-46 h-40 rounded-full overflow-hidden flex-shrink-0">
                     <img
                         src={imageSrc}
@@ -19,10 +19,9 @@ const {
                         class="w-full h-full object-cover"
                     />
                 </div>
-    <p class="leading-relaxed font-semibold text-xl md:text-xl text-[var(--color-secondary)]">
-      {subtitle},
+    <h2 class="font-heading mb-6 text-xl md:text-xl leading-relaxed font-semibold text-[var(--color-heading)]">
       {description}
-    </p>
+    </h2>
       </div>
         </div>
             </div>

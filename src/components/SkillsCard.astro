@@ -3,12 +3,14 @@
 ---
 <!-- SkillsCard.astro -->
 
-        <div class="w-7/12 mx-auto px-12 text-center">
-            <h2 class="mb-12 pb-2 text-2xl font-bold border-b text-[var(--color-primary)] border-[var(--color-accent)]">Skills</h2>
+        <hr class="w-9/12 py-12 mx-auto border-b-2 border-[var(--color-primary)]" />
+        <div class="my-8 mx-auto px-6 rounded-2xl">
+        <h2 class="font-heading mx-auto mb-6 text-center text-5xl leading-relaxed text-[var(--color-primary)]">🛠️ Skills</h2>
             </div>
-            <div class="w-7/12 mx-auto mb-24  px-12 grid grid-cols-2 md:grid-cols-2 gap-4">
+             <hr class="w-10/12 mx-auto mb-8 border-b-2 border-[var(--color-bg)]" />
+            <div class="w-7/12 mx-auto mb-24 px-12 grid grid-cols-2 md:grid-cols-2 gap-4">
                 {['Astro', 'TypeScript', 'React', 'Node.js', 'Tailwind CSS', 'PostgreSQL'].map((skill) => (
-                    <div class="p-2 text-lg text-center font-bold rounded-2xl text-[var(--color-secondary)] bg-[var(--color-btn-bg)] border-2 border-[var(--color-accent)]">
+                    <div class="p-2 text-lg text-center font-bold rounded-2xl text-[var(--color-btn-text)] bg-[var(--color-btn-bg)] border-2 border-[var(--color-accent)]">
                         {skill}
                     </div>
                 ))}

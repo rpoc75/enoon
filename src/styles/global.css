@@ -8,32 +8,38 @@
 
 /* Default (no JS / SSR fallback) — matches light mode */
 :root {
-  --color-bg-body: #FFF;
-  --color-primary: #e0ddef;
-  --color-secondary: #1a1a1d;
-  --color-primary-hover: #1a1a1d;
-  --color-accent: #9f94ca;
-  --color-bg: #000;
-  --color-fg: #aea3d8;
-  --color-btn-bg: #9f94ca;
-  --color-btn-bg-alt: #22202c;
-  --color-btn-hover-bg: #22202c;
-  --color-brand: #FFF;
+  --color-bg-body: #7e7e7f;
+  --color-primary: #1a1a1d;
+  --color-secondary: #bebdc3;
+  --color-link: #1a1a1d;
+  --color-link-hover: #bebdc3;
+  --color-title: #1a1a1d;
+  --color-heading: #bebdc3;
+  --color-accent: #beb3df;
+  --color-bg: #1a1a1d;    
+  --color-btn-bg: #1a1a1d;
+  --color-btn-text: #7e7e7f;
+  --color-btn-hover-bg: #7e7e7f;
+  --color-btn-hover-text: #1a1a1d;
+  --color-brand: #c7c7d5;
 }
 
 /* Light mode defaults */
 :root[data-mode='light'] {
-  --color-bg-body: #FFF;
-  --color-primary: #e0ddef;
-  --color-secondary: #1a1a1d;
-  --color-primary-hover: #1a1a1d;
-  --color-accent: #9f94ca;
-  --color-bg: #33343a;
-  --color-fg: #aea3d8;     
-  --color-btn-bg: #9f94ca;
-  --color-btn-bg-alt: #22202c;
-  --color-btn-hover-bg: #22202c;
-  --color-brand: #FFF;
+  --color-bg-body: #7e7e7f;
+  --color-primary: #1a1a1d;
+  --color-secondary: #bebdc3;
+  --color-link: #1a1a1d;
+  --color-link-hover: #bebdc3;
+  --color-title: #1a1a1d;
+  --color-heading: #bebdc3;
+  --color-accent: #beb3df;
+  --color-bg: #1a1a1d;    
+  --color-btn-bg: #1a1a1d;
+  --color-btn-text: #7e7e7f;
+  --color-btn-hover-bg: #7e7e7f;
+  --color-btn-hover-text: #1a1a1d;
+  --color-brand: #c7c7d5;
 }
 
 /* Dark mode */
@@ -41,14 +47,17 @@
   --color-bg-body: #000;
   --color-primary: #bebdc3;
   --color-secondary: #1a1a1d;
-  --color-primary-hover: #6b6b86;
-  --color-accent: #6e639a;
-  --color-bg: #1a1a1d;
-  --color-fg: #bebdc3;     
-  --color-btn-bg: #bebdc3;
-  --color-btn-bg-alt: #22202c;
-  --color-btn-hover-bg: #22202c;
-  --color-brand: #bebdc3;
+  --color-link: #bebdc3;
+  --color-link-hover: #1a1a1d;
+  --color-title: #7e7e7f;
+  --color-heading: #bebdc3;
+  --color-accent: #beb3df;
+  --color-bg: #7e7e7f;    
+  --color-btn-bg: #7e7e7f;
+  --color-btn-text: #1a1a1d;
+  --color-btn-hover-bg: #1a1a1d;
+  --color-btn-hover-text: #bebdc3;
+  --color-brand: #7e7e7f;
 };
 
 body {
@@ -77,4 +86,13 @@ body {
   }
 }
 
-@layer utilities { .fade-in { animation: fadeIn 1.3s ease-out both; } @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } } }
+@layer utilities {
+   .fade-in {
+     animation: fadeIn 0.7s ease-out both; }
+     
+@keyframes fadeIn {
+   from { opacity: 0;
+     transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+     }
+ }

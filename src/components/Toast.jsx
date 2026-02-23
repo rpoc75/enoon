@@ -26,7 +26,7 @@ export default function Toast() {
       {toasts.map((t) => (
         <div
           key={t.id}
-          className="px-6 py-4 rounded-xl shadow-lg text-[var(--color-bg)] bg-[var(--color-accent)]
+          className="px-6 py-4 rounded-xl shadow-lg text-[var(--color-btn-hover-text)] bg-[var(--color-accent)]
                      animate-[toast-in_0.25s_ease-out] cursor-pointer"
           onClick={() =>
             setToasts((prev) => prev.filter((toast) => toast.id !== t.id))
